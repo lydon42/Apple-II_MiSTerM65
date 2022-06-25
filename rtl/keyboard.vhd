@@ -65,7 +65,7 @@ architecture rtl of keyboard is
 
 begin
 
-  keyboard_rom : work.spram
+  keyboard_rom : entity work.spram
   generic map (11,8,"rtl/roms/keyboard.mif")
   port map (
    address => std_logic_vector(rom_addr),

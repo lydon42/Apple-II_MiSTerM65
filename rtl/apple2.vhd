@@ -516,7 +516,7 @@ begin
 
   -- Original Apple had asynchronous ROMs.  We use a synchronous ROM
   -- that needs its address earlier, hence the odd clock.
-  roms : work.spram
+  roms : entity work.spram
   generic map (14,8,"rtl/roms/apple2e.mif")
   port map (
    address => std_logic_vector(rom_addr),

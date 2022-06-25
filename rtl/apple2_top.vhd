@@ -344,14 +344,14 @@ begin
     ram_we         => HDD_RAM_WE
     );
 
-  mb : work.mockingboard
+  mb : entity work.mockingboard
     port map (
       CLK_14M    => CLK_14M,
       PHASE_ZERO => PHASE_ZERO,
       I_RESET_L => not reset,
       I_ENA_H   => mb_enabled,
 
-      I_ADDR    => std_logic_vector(ADDR)(7 downto 0),
+      I_ADDR    => std_logic_vector(ADDR(7 downto 0)),
       I_DATA    => std_logic_vector(D),
       unsigned(O_DATA) => PSG_DO,
       I_RW_L    => not cpu_we,
